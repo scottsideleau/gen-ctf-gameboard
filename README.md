@@ -15,7 +15,9 @@ Modify key parameters in config.yml before executing; including, but not limited
         * flag_offset: Distance to offset the flag in meters
 
 ## Counterclockwise (Default) Point Labeling Guide
-![Generate CTF Gameboard (CCW)](images/gen-ctf-gameboard.png)
+![Generate CTF Gameboard (CCW)](images/gen-ctf-gameboard.png#gh-light-mode-only)
+![Generate CTF Gameboard (CCW)](images/gen-ctf-gameboard-dark.png#gh-dark-mode-only)
 
 ## Clockwise Point Labeling Guide
-![Generate CTF Gameboard (CW)](images/gen-ctf-gameboard-cw.png)
+![Generate CTF Gameboard (CW)](images/gen-ctf-gameboard-cw.png#gh-light-mode-only)
+![Generate CTF Gameboard (CW)](images/gen-ctf-gameboard-cw-dark.png#gh-dark-mode-only)
