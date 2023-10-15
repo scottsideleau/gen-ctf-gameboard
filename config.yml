@@ -5,5 +5,5 @@ start:
 gameboard:
   length:     160.0   # meters
   width:       80.0   # meters
-  build_dir:    cw   # or 'cw'
+  build_dir:    ccw   # or 'cw'
   flag_offset: 20.0   # meters
