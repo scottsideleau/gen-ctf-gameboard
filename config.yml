@@ -1,9 +1,9 @@
 start:
-  latitude: 51.1234
-  longitude: -150.679
-  bearing: 150.0      # should correlate with 'build_bearing'
+  lat:  -35.122924  # decimal degrees
+  long: 150.710536  # decimal degrees
+  brg:  140.0       # should correlate with 'build_bearing'
 gameboard:
-  height: 160
-  width: 80
-  build_bearing: ccw  # or 'cw'
-  flag_offset: 20     # meters
+  length:     160.0   # meters
+  width:       80.0   # meters
+  build_dir:    cw   # or 'cw'
+  flag_offset: 20.0   # meters
