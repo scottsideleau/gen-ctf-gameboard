@@ -41,7 +41,7 @@ def main():
     start_brg = config["start"]["brg"]
     build_dir = config["gameboard"]["build_dir"]
     board_length = config["gameboard"]["length"]
-    build_width = config["gameboard"]["width"]
+    board_width = config["gameboard"]["width"]
     flag_offset = config["gameboard"]["flag_offset"]
 
     # Evaluate build direction
@@ -59,12 +59,12 @@ def main():
         if label == "A":
             point = (start_lat, start_lon)
         else:
-            distance = build_width if label in ["B", "D"] else board_length
+            distance = board_width if label in ["B", "D"] else board_length
             point = calculate_new_point(vertices[-1], distance, angle)
         vertices.append(point)
         angle += 90 * build_sign  # Rotate for the next point
 
-    # Calculate the length of each side and identify the two longest sides
+    # Calculate the length of each side
     side_lengths = []
     for i in range(4):
         next_point = vertices[(i + 1) % 4]
@@ -79,7 +79,7 @@ def main():
     )
     longest_sides = [sorted_lengths[0][0], sorted_lengths[1][0]]
 
-    # Calculate and append midpoints of the two longest sides
+    # Calculate and append midpoints for the two longest sides
     midpoints = []
     for side_index in longest_sides:
         start_point = vertices[side_index]
@@ -91,7 +91,7 @@ def main():
     # Identify the two shortest sides
     shortest_sides = [sorted_lengths[2][0], sorted_lengths[3][0]]
 
-    # Calculate flag locations
+    # Calculate flag locations for the two shortest sides
     flag_distance = flag_offset  # meters offset
     flags = []
     for side_index in shortest_sides:
@@ -112,7 +112,6 @@ def main():
 
     # Generate tables for printing/writing
     tables = []
-
     vertex_labels += ["Mid_1", "Mid_2", "Flag_1", "Flag_2"]
     for label, point in zip(vertex_labels, vertices + midpoints + flags):
         dm_lat, dm_lon = format_decimal_minutes(point)
